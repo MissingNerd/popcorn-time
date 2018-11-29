@@ -6,22 +6,26 @@ function rand (min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
+let popcorn = []
+
 $('#pushForPopcorn').click(() => {
-  const id = 'a' + rand(1, 10000000000000)
-  const neuesElement = $('<img id="' + id + '" src="./popcorn.d8fd4492.png" height="100"/>')
-  $('body').append(neuesElement)
-  neuesElement.css('left', rand(1, 100) + '%')
+  const newElement = $('<img src="./popcorn.d8fd4492.png" height="100"/>')
+  $('body').append(newElement)
+  newElement.css('left', rand(1, 100) + '%').css('transform', 'rotate(' + rand(0, 359) + 'deg)')
+
+  popcorn.unshift(newElement)
 
   const windowHeight = $(window).height()
-  const lineHeight = $('#' + id).height()
-  const desiredBottom = 0
+  const lineHeight = newElement.height()
 
-  const newPosition = windowHeight - (lineHeight + desiredBottom)
+  const newPosition = windowHeight - lineHeight
 
-  $('#' + id).animate({top: newPosition, duration: rand(250, 2500)}, 1000, function () {
-    $('#' + id).css({
-      bottom: desiredBottom,
+  newElement.animate({top: newPosition, duration: rand(250, 2500)}, 1000, function () {
+    newElement.css({
+      bottom: 0,
       top: 'auto'
     })
   })
+
+  popcorn.splice(200).forEach(e => e.fadeOut('slow'))
 })

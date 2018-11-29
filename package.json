@@ -4,7 +4,10 @@
   "description": "Dude, it's Popcorn!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "scripty",
+    "build": "scripty",
+    "publish": "scripty"
   },
   "keywords": [
     "popcorn"
@@ -12,6 +15,8 @@
   "author": "Benjamin Moser <rebdideb@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "parcel-bundler": "^1.10.3",
+    "scripty": "^1.8.0"
   }
 }

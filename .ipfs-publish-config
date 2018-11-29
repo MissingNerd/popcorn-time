@@ -1,0 +1,3 @@
+DNS_PROV=cf
+DOMAIN=popcorn-button.tk
+OUT_DIR=dist

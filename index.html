@@ -7,9 +7,11 @@
 </head>
 
 <body>
-  <button id="pushForPopcorn">
-    Push for Popcorn
-  </button>
+  <div class="container">
+    <button id="pushForPopcorn">
+      Push for Popcorn
+    </button>
+  </div>
   <script src="./index.js"></script>
   <style>
     img {
@@ -19,11 +21,26 @@
     }
     button {
       position: fixed;
-      left: 45%;
       top: 25%;
+      padding: 8px 16px;
+      font-size: 64px;
+      background: #aa0f0f;
+      border: none;
+      border-radius: 16px;
+      align-self: center;
+      color: #afafaf;
+    }
+    body {
+      background: url("./bg.png");
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
     }
   </style>
   <img style="display: none" src="./popcorn.png" />
+
 </body>
 
 </html>
