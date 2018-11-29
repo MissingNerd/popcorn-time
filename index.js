@@ -1,4 +1,4 @@
-'use strict'
+import popcornImg from './popcorn.png'
 
 const $ = window.$ = require('jquery')
 
@@ -9,7 +9,7 @@ function rand (min, max) {
 let popcorn = []
 
 $('#pushForPopcorn').click(() => {
-  const newElement = $('<img src="./popcorn.d8fd4492.png" height="100"/>')
+  const newElement = $('<img src="./' + popcornImg + '" height="100"/>')
   $('body').append(newElement)
   newElement.css('left', rand(1, 100) + '%').css('transform', 'rotate(' + rand(0, 359) + 'deg)')
 
